@@ -14,11 +14,14 @@ def macaco3000(t,pi=np.pi):
 
 #indice a
 t=np.arange(1,1001,1)
+h=t
 size=len(t)
 y=macaco3000(t)
 n=np.random.normal(0,1,size)
 y2=y+n
 
+y3=y
+y4=y2
 t=t[t<=200]
 y=y[y>=-4]
 y=y[y<=4]
@@ -29,7 +32,8 @@ y=y[:200]
 y2=y2[:200]
 
 
-(f,px)=sg.periodogram(t)
+(f,px)=sg.periodogram(y3)
+(f2,px2)=sg.periodogram(y4)
 
 plt.figure()
 plt.plot(t,y,color="Blue")
@@ -39,6 +43,10 @@ plt.xlabel("Time")
 plt.savefig("Macacosignal.png")
 
 plt.figure()
-plt.semilogy(f,px)
-plt.savefig("Macaquismo.png")
+plt.plot(f,px)
+plt.savefig("caquismo.png")
+
+plt.figure()
+plt.plot(f2,px2)
+plt.savefig("caquismo2.png")
 
