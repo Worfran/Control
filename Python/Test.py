@@ -1,1 +1,4 @@
-print('Hola mundo')
+boletin = {}
+
+boletin["prueba"]=1
+print(boletin)
